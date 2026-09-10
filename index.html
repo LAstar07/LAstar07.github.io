@@ -1,50 +1,111 @@
 <!doctype html>
 <html lang="no">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>LA – Min side</title>
+<title>Om meg – LA</title>
 
 <style>
   body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    background-image: url('katten.jpeg'); /* BYTT TIL RIKTIG FILNAVN */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #8fbf7a; /* aprilgrønn bakgrunn */
     font-family: system-ui, Segoe UI, Arial;
   }
 
   h1 {
-    font-size: 6rem;
-    color: #00ff00; /* grønn */
-    text-shadow: 2px 2px 8px black;
-    margin: 0;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 40px;
+    color: black;
   }
 
-  p {
-    font-size: 1.5rem;
-    color: white;
-    text-shadow: 1px 1px 4px black;
-    margin-top: 20px;
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #7eb06d; /* LA / Lovise Adele */
+    margin-bottom: 40px;
   }
 
-  code {
-    background: rgba(0,0,0,0.5);
-    padding: 6px 10px;
-    border-radius: 6px;
-    color: #00ff00;
+  .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .box {
+    background-color: #e3ca78; /* boksfarge */
+    padding: 20px;
+    width: 40%;
+    min-width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+
+  .box h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+  }
+
+  .box ul {
     font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+  }
+
+  footer h4 {
+    color: #4e7542; /* kontaktfarge */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  footer p {
+    font-size: 1.3rem;
+    color: black;
   }
 </style>
+</head>
 
-<h1>LA</h1>
-<p>Kontakt meg: <code>LA@stjerne</code></p>
+<body>
 
+<h1>Velkommen til min nettside om meg</h1>
+<h2>LA / Lovise Adele</h2>
+
+<div class="container">
+
+  <div class="box">
+    <h3>Mine interesser</h3>
+    <ul>
+      <li>Minecraft</li>
+      <li>Roblox</li>
+      <li>Tegning</li>
+      <li>Maling</li>
+      <li>Pokemon</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>Mine prosjekter</h3>
+    <ul>
+      <li>1 – <a href="#">(legg inn link)</a></li>
+      <li>2 – <a href="#">(legg inn link)</a></li>
+      <li>3 – <a href="#">(legg inn link)</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <h4>Vil du kontakte meg?:</h4>
+  <p>LA@Stjerne.no</p>
+</footer>
+
+</body>
 </html>
