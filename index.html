@@ -7,7 +7,6 @@
 
   <title>Lovise A — Portfolio</title>
 
-  <!-- Futuristisk / space-aktig font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -27,28 +26,40 @@
       padding: 40px 20px;
 
       font-family: "Orbitron", sans-serif;
-      color: #c8ffe9;
-
-      background:
-        radial-gradient(
-          circle at 50% -20%,
-          rgba(0, 255, 140, 0.22),
-          transparent 45%
-        ),
-        radial-gradient(
-          circle at 10% 80%,
-          rgba(0, 180, 100, 0.12),
-          transparent 35%
-        ),
-        linear-gradient(
-          145deg,
-          #010806 0%,
-          #03140e 45%,
-          #010604 100%
-        );
+      color: #7dffb2;
 
       overflow-x: hidden;
       position: relative;
+
+      /* Nordlyshimmel */
+      background:
+        radial-gradient(
+          ellipse at 50% 10%,
+          rgba(0, 255, 170, 0.25),
+          transparent 40%
+        ),
+        radial-gradient(
+          ellipse at 15% 45%,
+          rgba(0, 255, 120, 0.20),
+          transparent 35%
+        ),
+        radial-gradient(
+          ellipse at 85% 35%,
+          rgba(90, 0, 255, 0.22),
+          transparent 38%
+        ),
+        radial-gradient(
+          ellipse at 50% 90%,
+          rgba(0, 100, 255, 0.15),
+          transparent 40%
+        ),
+        linear-gradient(
+          180deg,
+          #02091a 0%,
+          #031b24 35%,
+          #04241d 65%,
+          #010b0b 100%
+        );
     }
 
     /* Stjerner */
@@ -57,86 +68,103 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.8;
 
       background-image:
-        radial-gradient(circle, #baffdf 1px, transparent 1px),
-        radial-gradient(circle, #54ffb0 1px, transparent 1px),
-        radial-gradient(circle, #ffffff 1px, transparent 1px);
+        radial-gradient(circle, #ffffff 1px, transparent 1px),
+        radial-gradient(circle, #b8ffe0 1px, transparent 1px),
+        radial-gradient(circle, #72ffd0 1px, transparent 1px);
 
       background-size:
         90px 90px,
-        140px 140px,
-        210px 210px;
+        150px 150px,
+        230px 230px;
 
       background-position:
         10px 20px,
         50px 80px,
-        100px 30px;
+        120px 40px;
 
-      animation: stars 25s linear infinite;
+      opacity: 0.75;
+
+      animation: stars 30s linear infinite;
     }
 
-    /* Nordlys */
+    /* Selve nordlyset */
     body::after {
       content: "";
       position: fixed;
-      z-index: -1;
+      z-index: 0;
+      pointer-events: none;
 
-      width: 130vw;
-      height: 65vh;
+      width: 150vw;
+      height: 75vh;
 
-      top: -18vh;
-      left: -15vw;
+      top: -20vh;
+      left: -25vw;
 
       background:
         radial-gradient(
-          ellipse at center,
-          rgba(0, 255, 140, 0.6) 0%,
-          rgba(0, 230, 120, 0.35) 22%,
-          rgba(0, 150, 90, 0.18) 42%,
-          transparent 72%
+          ellipse 45% 100% at 20% 60%,
+          rgba(0, 255, 130, 0.55),
+          transparent 70%
+        ),
+        radial-gradient(
+          ellipse 35% 100% at 45% 40%,
+          rgba(0, 255, 200, 0.50),
+          transparent 70%
+        ),
+        radial-gradient(
+          ellipse 30% 100% at 65% 50%,
+          rgba(100, 0, 255, 0.35),
+          transparent 70%
+        ),
+        radial-gradient(
+          ellipse 35% 100% at 85% 40%,
+          rgba(0, 180, 255, 0.35),
+          transparent 70%
         );
 
-      filter: blur(60px);
+      filter: blur(35px);
 
       transform:
         rotate(-8deg)
-        skewY(-8deg);
+        skewY(-10deg);
+
+      opacity: 0.9;
 
       animation:
-        aurora 11s ease-in-out infinite alternate;
+        aurora 12s ease-in-out infinite alternate;
     }
 
     @keyframes aurora {
       0% {
         transform:
           translateX(-8%)
-          rotate(-8deg)
+          rotate(-10deg)
           skewY(-8deg)
           scale(1);
 
-        opacity: 0.55;
+        filter: blur(35px);
       }
 
       50% {
         transform:
-          translateX(8%)
+          translateX(7%)
           rotate(5deg)
-          skewY(5deg)
-          scale(1.18);
+          skewY(8deg)
+          scale(1.15);
 
-        opacity: 0.9;
+        filter: blur(45px);
       }
 
       100% {
         transform:
           translateX(-2%)
           rotate(-4deg)
-          skewY(-3deg)
-          scale(1.05);
+          skewY(-5deg)
+          scale(1.08);
 
-        opacity: 0.7;
+        filter: blur(30px);
       }
     }
 
@@ -151,49 +179,42 @@
     }
 
     main {
+      position: relative;
+      z-index: 2;
+
       width: min(760px, 100%);
       margin: 0 auto;
       padding: 50px;
 
-      border: 1px solid rgba(90, 255, 170, 0.2);
+      border: 1px solid rgba(100, 255, 180, 0.22);
       border-radius: 28px;
 
-      background:
-        linear-gradient(
-          145deg,
-          rgba(3, 25, 17, 0.78),
-          rgba(1, 12, 8, 0.65)
-        );
+      /* Litt gjennomsiktig så nordlyset synes gjennom */
+      background: rgba(1, 15, 14, 0.48);
 
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
 
       box-shadow:
-        0 30px 100px rgba(0, 0, 0, 0.65),
-        0 0 80px rgba(0, 255, 140, 0.08),
-        inset 0 0 40px rgba(0, 255, 140, 0.025);
+        0 30px 100px rgba(0, 0, 0, 0.55),
+        0 0 80px rgba(0, 255, 150, 0.12),
+        inset 0 0 50px rgba(0, 255, 160, 0.035);
     }
 
     .badge {
       display: inline-block;
 
       padding: 8px 15px;
-
       border-radius: 999px;
 
-      border: 1px solid rgba(80, 255, 165, 0.35);
+      background: rgba(0, 255, 150, 0.08);
+      border: 1px solid rgba(90, 255, 170, 0.35);
 
-      background: rgba(0, 255, 140, 0.06);
-
-      color: #73ffba;
+      color: #73ffb3;
 
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.18em;
-      text-transform: uppercase;
-
-      box-shadow:
-        0 0 20px rgba(0, 255, 140, 0.08);
     }
 
     h1 {
@@ -202,39 +223,39 @@
       font-size: clamp(2.3rem, 8vw, 4.7rem);
       line-height: 1.05;
       font-weight: 800;
-      letter-spacing: 0.02em;
 
-      color: #baffdc;
+      color: #a8ffd0;
 
       text-shadow:
-        0 0 10px rgba(90, 255, 170, 0.35),
-        0 0 35px rgba(0, 255, 140, 0.18);
+        0 0 10px rgba(80, 255, 155, 0.45),
+        0 0 30px rgba(0, 255, 140, 0.25),
+        0 0 60px rgba(0, 255, 140, 0.12);
 
       animation: titleGlow 4s ease-in-out infinite alternate;
     }
 
     h1 span {
-      color: #50ff9b;
+      color: #55ff9d;
     }
 
     @keyframes titleGlow {
       from {
         text-shadow:
-          0 0 8px rgba(80, 255, 155, 0.3),
-          0 0 25px rgba(0, 255, 140, 0.1);
+          0 0 10px rgba(80, 255, 155, 0.35),
+          0 0 30px rgba(0, 255, 140, 0.15);
       }
 
       to {
         text-shadow:
-          0 0 15px rgba(80, 255, 155, 0.55),
-          0 0 45px rgba(0, 255, 140, 0.22);
+          0 0 15px rgba(80, 255, 155, 0.65),
+          0 0 45px rgba(0, 255, 140, 0.30);
       }
     }
 
     .welcome {
-      margin: 0 0 28px;
+      margin-bottom: 28px;
 
-      color: #69ffad;
+      color: #66ffac;
 
       font-size: 0.85rem;
       font-weight: 600;
@@ -242,13 +263,11 @@
       text-transform: uppercase;
 
       text-shadow:
-        0 0 12px rgba(80, 255, 155, 0.4);
+        0 0 12px rgba(80, 255, 155, 0.5);
     }
 
     p {
-      color: #a7cdbc;
-
-      font-family: "Orbitron", sans-serif;
+      color: #91e8b7;
 
       font-size: 0.9rem;
       line-height: 1.9;
@@ -256,14 +275,14 @@
     }
 
     strong {
-      color: #75ffb4;
+      color: #72ffb0;
     }
 
     h2 {
       margin-top: 50px;
       margin-bottom: 20px;
 
-      color: #69ffad;
+      color: #66ffac;
 
       font-size: 1.05rem;
       font-weight: 700;
@@ -271,7 +290,7 @@
       text-transform: uppercase;
 
       text-shadow:
-        0 0 15px rgba(80, 255, 155, 0.3);
+        0 0 15px rgba(80, 255, 155, 0.35);
     }
 
     ul {
@@ -285,13 +304,12 @@
     li {
       padding: 20px 22px;
 
-      border: 1px solid rgba(80, 255, 155, 0.14);
+      border: 1px solid rgba(80, 255, 155, 0.16);
       border-radius: 16px;
 
-      background:
-        rgba(0, 255, 140, 0.035);
+      background: rgba(0, 255, 140, 0.035);
 
-      color: #a9d8bf;
+      color: #91e8b7;
 
       transition:
         transform 0.25s ease,
@@ -303,14 +321,13 @@
     li:hover {
       transform: translateX(10px);
 
-      background:
-        rgba(0, 255, 140, 0.08);
+      background: rgba(0, 255, 140, 0.10);
 
       border-color:
-        rgba(80, 255, 155, 0.45);
+        rgba(80, 255, 155, 0.5);
 
       box-shadow:
-        0 0 25px rgba(0, 255, 140, 0.08);
+        0 0 30px rgba(0, 255, 140, 0.12);
     }
 
     a {
@@ -320,18 +337,16 @@
       font-weight: 700;
 
       text-shadow:
-        0 0 10px rgba(80, 255, 155, 0.3);
+        0 0 10px rgba(80, 255, 155, 0.35);
 
-      transition:
-        color 0.2s ease,
-        text-shadow 0.2s ease;
+      transition: 0.2s ease;
     }
 
     a:hover {
       color: #baffdc;
 
       text-shadow:
-        0 0 15px rgba(80, 255, 155, 0.7);
+        0 0 18px rgba(80, 255, 155, 0.8);
     }
 
     .contact {
@@ -339,7 +354,7 @@
       padding-top: 28px;
 
       border-top:
-        1px solid rgba(80, 255, 155, 0.12);
+        1px solid rgba(80, 255, 155, 0.15);
     }
 
     code {
@@ -353,7 +368,7 @@
         rgba(0, 255, 140, 0.08);
 
       border:
-        1px solid rgba(80, 255, 155, 0.25);
+        1px solid rgba(80, 255, 155, 0.3);
 
       color: #72ffb4;
 
@@ -361,7 +376,7 @@
       font-size: 0.8rem;
 
       box-shadow:
-        0 0 20px rgba(0, 255, 140, 0.08);
+        0 0 20px rgba(0, 255, 140, 0.10);
     }
 
     .footer {
@@ -369,7 +384,7 @@
 
       text-align: center;
 
-      color: #466b58;
+      color: #4e9b70;
 
       font-size: 0.6rem;
       letter-spacing: 0.12em;
