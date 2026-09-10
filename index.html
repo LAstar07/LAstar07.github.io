@@ -1,17 +1,27 @@
-```html
+LA
 <!doctype html>
 <html lang="no">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Lovise A — Portfolio</title>
 
+  <!-- Futuristisk space-font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
+    /* =========================
+       GRUNNINNSTILLINGER
+    ========================= */
+
     * {
       box-sizing: border-box;
     }
@@ -31,48 +41,65 @@
       overflow-x: hidden;
       position: relative;
 
-      /* Nordlyshimmel */
+      /* Dyp space-bakgrunn */
       background:
         radial-gradient(
-          ellipse at 50% 10%,
-          rgba(0, 255, 170, 0.25),
-          transparent 40%
+          ellipse at 50% 5%,
+          rgba(120, 40, 255, 0.25),
+          transparent 42%
         ),
+
         radial-gradient(
-          ellipse at 15% 45%,
-          rgba(0, 255, 120, 0.20),
-          transparent 35%
-        ),
-        radial-gradient(
-          ellipse at 85% 35%,
-          rgba(90, 0, 255, 0.22),
+          ellipse at 10% 45%,
+          rgba(0, 210, 255, 0.18),
           transparent 38%
         ),
+
         radial-gradient(
-          ellipse at 50% 90%,
-          rgba(0, 100, 255, 0.15),
-          transparent 40%
+          ellipse at 90% 40%,
+          rgba(80, 255, 150, 0.18),
+          transparent 38%
         ),
+
         linear-gradient(
           180deg,
-          #02091a 0%,
-          #031b24 35%,
-          #04241d 65%,
-          #010b0b 100%
+          #050719 0%,
+          #080d27 30%,
+          #061b25 60%,
+          #02090d 100%
         );
     }
 
-    /* Stjerner */
+
+    /* =========================
+       STJERNEHIMMEL
+    ========================= */
+
     body::before {
       content: "";
       position: fixed;
       inset: 0;
+
       pointer-events: none;
 
       background-image:
-        radial-gradient(circle, #ffffff 1px, transparent 1px),
-        radial-gradient(circle, #b8ffe0 1px, transparent 1px),
-        radial-gradient(circle, #72ffd0 1px, transparent 1px);
+        radial-gradient(
+          circle,
+          #ffffff 1px,
+          transparent 1px
+        ),
+
+        radial-gradient(
+          circle,
+          #b7dfff 1px,
+          transparent 1px
+        ),
+
+        radial-gradient(
+          circle,
+          #a98cff 1px,
+          transparent 1px
+        );
 
       background-size:
         90px 90px,
@@ -86,41 +113,62 @@
 
       opacity: 0.75;
 
-      animation: stars 30s linear infinite;
+      animation:
+        stars 30s linear infinite;
     }
 
-    /* Selve nordlyset */
+
+    /* =========================
+       NORDLYS
+    ========================= */
+
     body::after {
       content: "";
+
       position: fixed;
       z-index: 0;
       pointer-events: none;
 
-      width: 150vw;
-      height: 75vh;
+      width: 160vw;
+      height: 80vh;
 
-      top: -20vh;
-      left: -25vw;
+      top: -22vh;
+      left: -30vw;
 
       background:
+
+        /* LILLA */
         radial-gradient(
-          ellipse 45% 100% at 20% 60%,
-          rgba(0, 255, 130, 0.55),
+          ellipse 32% 100% at 18% 55%,
+          rgba(170, 50, 255, 0.55),
           transparent 70%
         ),
+
+        /* BLÅ */
         radial-gradient(
-          ellipse 35% 100% at 45% 40%,
-          rgba(0, 255, 200, 0.50),
+          ellipse 32% 100% at 38% 40%,
+          rgba(0, 150, 255, 0.48),
           transparent 70%
         ),
+
+        /* CYAN */
         radial-gradient(
-          ellipse 30% 100% at 65% 50%,
-          rgba(100, 0, 255, 0.35),
+          ellipse 28% 100% at 55% 55%,
+          rgba(0, 255, 220, 0.45),
           transparent 70%
         ),
+
+        /* GRØNN */
         radial-gradient(
-          ellipse 35% 100% at 85% 40%,
-          rgba(0, 180, 255, 0.35),
+          ellipse 35% 100% at 72% 45%,
+          rgba(40, 255, 130, 0.45),
+          transparent 70%
+        ),
+
+        /* LILLA IGJEN */
+        radial-gradient(
+          ellipse 30% 100% at 90% 55%,
+          rgba(120, 60, 255, 0.48),
           transparent 70%
         );
 
@@ -136,7 +184,13 @@
         aurora 12s ease-in-out infinite alternate;
     }
 
+
+    /* =========================
+       ANIMASJONER
+    ========================= */
+
     @keyframes aurora {
+
       0% {
         transform:
           translateX(-8%)
@@ -152,7 +206,7 @@
           translateX(7%)
           rotate(5deg)
           skewY(8deg)
-          scale(1.15);
+          scale(1.18);
 
         filter: blur(45px);
       }
@@ -168,7 +222,9 @@
       }
     }
 
+
     @keyframes stars {
+
       from {
         transform: translateY(0);
       }
@@ -178,67 +234,9 @@
       }
     }
 
-    main {
-      position: relative;
-      z-index: 2;
-
-      width: min(760px, 100%);
-      margin: 0 auto;
-      padding: 50px;
-
-      border: 1px solid rgba(100, 255, 180, 0.22);
-      border-radius: 28px;
-
-      /* Litt gjennomsiktig så nordlyset synes gjennom */
-      background: rgba(1, 15, 14, 0.48);
-
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-
-      box-shadow:
-        0 30px 100px rgba(0, 0, 0, 0.55),
-        0 0 80px rgba(0, 255, 150, 0.12),
-        inset 0 0 50px rgba(0, 255, 160, 0.035);
-    }
-
-    .badge {
-      display: inline-block;
-
-      padding: 8px 15px;
-      border-radius: 999px;
-
-      background: rgba(0, 255, 150, 0.08);
-      border: 1px solid rgba(90, 255, 170, 0.35);
-
-      color: #73ffb3;
-
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-    }
-
-    h1 {
-      margin: 28px 0 18px;
-
-      font-size: clamp(2.3rem, 8vw, 4.7rem);
-      line-height: 1.05;
-      font-weight: 800;
-
-      color: #a8ffd0;
-
-      text-shadow:
-        0 0 10px rgba(80, 255, 155, 0.45),
-        0 0 30px rgba(0, 255, 140, 0.25),
-        0 0 60px rgba(0, 255, 140, 0.12);
-
-      animation: titleGlow 4s ease-in-out infinite alternate;
-    }
-
-    h1 span {
-      color: #55ff9d;
-    }
 
     @keyframes titleGlow {
+
       from {
         text-shadow:
           0 0 10px rgba(80, 255, 155, 0.35),
@@ -247,10 +245,126 @@
 
       to {
         text-shadow:
-          0 0 15px rgba(80, 255, 155, 0.65),
-          0 0 45px rgba(0, 255, 140, 0.30);
+          0 0 15px rgba(80, 255, 155, 0.7),
+          0 0 45px rgba(0, 255, 140, 0.3);
       }
     }
+
+
+    /* =========================
+       HOVEDKORT
+    ========================= */
+
+    main {
+      position: relative;
+      z-index: 2;
+
+      width: min(760px, 100%);
+
+      margin: 0 auto;
+      padding: 50px;
+
+      border:
+        1px solid rgba(100, 255, 180, 0.22);
+
+      border-radius: 28px;
+
+      /*
+        Gjennomsiktig glass-effekt.
+        Nordlyset synes gjennom.
+      */
+      background:
+        rgba(1, 15, 14, 0.48);
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      box-shadow:
+
+        0 30px 100px
+        rgba(0, 0, 0, 0.55),
+
+        0 0 80px
+        rgba(0, 255, 150, 0.12),
+
+        inset 0 0 50px
+        rgba(0, 255, 160, 0.035);
+    }
+
+
+    /* =========================
+       BADGE
+    ========================= */
+
+    .badge {
+      display: inline-block;
+
+      padding: 8px 15px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(0, 255, 150, 0.08);
+
+      border:
+        1px solid rgba(90, 255, 170, 0.35);
+
+      color: #73ffb3;
+
+      font-size: 0.7rem;
+      font-weight: 600;
+
+      letter-spacing: 0.18em;
+
+      box-shadow:
+        0 0 20px
+        rgba(0, 255, 150, 0.08);
+    }
+
+
+    /* =========================
+       OVERSKRIFT
+    ========================= */
+
+    h1 {
+      margin:
+        28px 0 18px;
+
+      font-size:
+        clamp(2.3rem, 8vw, 4.7rem);
+
+      line-height: 1.05;
+
+      font-weight: 800;
+
+      letter-spacing: 0.02em;
+
+      color: #a8ffd0;
+
+      text-shadow:
+
+        0 0 10px
+        rgba(80, 255, 155, 0.45),
+
+        0 0 30px
+        rgba(0, 255, 140, 0.25),
+
+        0 0 60px
+        rgba(0, 255, 140, 0.12);
+
+      animation:
+        titleGlow 4s ease-in-out infinite alternate;
+    }
+
+
+    h1 span {
+      color: #55ff9d;
+    }
+
+
+    /* =========================
+       VELKOMMEN
+    ========================= */
 
     .welcome {
       margin-bottom: 28px;
@@ -258,25 +372,46 @@
       color: #66ffac;
 
       font-size: 0.85rem;
+
       font-weight: 600;
+
       letter-spacing: 0.2em;
+
       text-transform: uppercase;
 
       text-shadow:
-        0 0 12px rgba(80, 255, 155, 0.5);
+        0 0 12px
+        rgba(80, 255, 155, 0.5);
     }
+
+
+    /* =========================
+       TEKST
+    ========================= */
 
     p {
       color: #91e8b7;
 
       font-size: 0.9rem;
+
       line-height: 1.9;
+
       letter-spacing: 0.03em;
     }
 
+
     strong {
       color: #72ffb0;
+
+      text-shadow:
+        0 0 8px
+        rgba(80, 255, 155, 0.2);
     }
+
+
+    /* =========================
+       PROSJEKTER
+    ========================= */
 
     h2 {
       margin-top: 50px;
@@ -285,29 +420,40 @@
       color: #66ffac;
 
       font-size: 1.05rem;
+
       font-weight: 700;
+
       letter-spacing: 0.15em;
+
       text-transform: uppercase;
 
       text-shadow:
-        0 0 15px rgba(80, 255, 155, 0.35);
+        0 0 15px
+        rgba(80, 255, 155, 0.35);
     }
+
 
     ul {
       list-style: none;
+
       padding: 0;
 
       display: grid;
+
       gap: 14px;
     }
+
 
     li {
       padding: 20px 22px;
 
-      border: 1px solid rgba(80, 255, 155, 0.16);
+      border:
+        1px solid rgba(80, 255, 155, 0.16);
+
       border-radius: 16px;
 
-      background: rgba(0, 255, 140, 0.035);
+      background:
+        rgba(0, 255, 140, 0.035);
 
       color: #91e8b7;
 
@@ -318,44 +464,65 @@
         box-shadow 0.25s ease;
     }
 
-    li:hover {
-      transform: translateX(10px);
 
-      background: rgba(0, 255, 140, 0.10);
+    li:hover {
+      transform:
+        translateX(10px);
+
+      background:
+        rgba(0, 255, 140, 0.10);
 
       border-color:
         rgba(80, 255, 155, 0.5);
 
       box-shadow:
-        0 0 30px rgba(0, 255, 140, 0.12);
+        0 0 30px
+        rgba(0, 255, 140, 0.12);
     }
+
+
+    /* =========================
+       LENKER
+    ========================= */
 
     a {
       color: #62ffab;
 
       text-decoration: none;
+
       font-weight: 700;
 
       text-shadow:
-        0 0 10px rgba(80, 255, 155, 0.35);
+        0 0 10px
+        rgba(80, 255, 155, 0.35);
 
-      transition: 0.2s ease;
+      transition:
+        0.2s ease;
     }
+
 
     a:hover {
       color: #baffdc;
 
       text-shadow:
-        0 0 18px rgba(80, 255, 155, 0.8);
+        0 0 18px
+        rgba(80, 255, 155, 0.8);
     }
+
+
+    /* =========================
+       KONTAKT
+    ========================= */
 
     .contact {
       margin-top: 40px;
+
       padding-top: 28px;
 
       border-top:
         1px solid rgba(80, 255, 155, 0.15);
     }
+
 
     code {
       display: inline-block;
@@ -372,12 +539,21 @@
 
       color: #72ffb4;
 
-      font-family: "Orbitron", monospace;
+      font-family:
+        "Orbitron",
+        monospace;
+
       font-size: 0.8rem;
 
       box-shadow:
-        0 0 20px rgba(0, 255, 140, 0.10);
+        0 0 20px
+        rgba(0, 255, 140, 0.10);
     }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     .footer {
       margin-top: 40px;
@@ -387,75 +563,116 @@
       color: #4e9b70;
 
       font-size: 0.6rem;
+
       letter-spacing: 0.12em;
+
       text-transform: uppercase;
     }
 
+
+    /* =========================
+       MOBIL
+    ========================= */
+
     @media (max-width: 600px) {
+
       body {
         padding: 15px;
       }
 
       main {
         padding: 30px 22px;
+
         border-radius: 22px;
       }
 
       h1 {
         font-size: 2.5rem;
       }
+
+      .welcome {
+        font-size: 0.7rem;
+
+        line-height: 1.7;
+      }
     }
+
   </style>
 </head>
+
 
 <body>
 
   <main>
 
-    <span class="badge">✦ DIGITAL PORTFOLIO</span>
+    <span class="badge">
+      ✦ SPACE UNIVERSE
+    </span>
+
 
     <h1>
       Hei, jeg heter<br>
-      <span>Lovise A</span>
+      <span>Lovise Adele / LA</span>
     </h1>
+
 
     <div class="welcome">
       Velkommen til mitt nettverk
     </div>
 
+
     <p>
-      Dette er min første nettside publisert med
-      <strong>GitHub Pages</strong>.
-      Velkommen til min lille del av internett.
+      Kulere nettside har du ikke sett!
+      <strong>Se mine prosjekter nedenfor</strong>.
     </p>
 
-    <h2>Prosjekter</h2>
+
+    <h2>
+      Prosjekter
+    </h2>
+
 
     <ul>
+
       <li>
         <strong>Prosjekt 01</strong>
         —
-        <a href="#">Se prosjekt →</a>
+        <a href="#">
+          Se prosjekt →
+        </a>
       </li>
 
       <li>
         <strong>Prosjekt 02</strong>
         —
-        <a href="#">Se prosjekt →</a>
+        <a href="#">
+          Se prosjekt →
+        </a>
       </li>
+
     </ul>
 
+
     <div class="contact">
-      <p>Kontakt meg</p>
-      <code>epost@eksempel.no</code>
+
+      <p>
+        Kontakt meg her!
+      </p>
+
+      <code>
+        epost@eksempel.no
+      </code>
+
     </div>
 
+
     <div class="footer">
-      SYSTEM ONLINE · NORTHERN LIGHTS · 001
+      SYSTEM ONLINE · 646 · NORTHERN LIGHTS
     </div>
 
   </main>
 
 </body>
+
 </html>
 ```
